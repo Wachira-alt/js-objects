@@ -79,7 +79,41 @@ const extraBooks = {
 
 
 //delete
+delete books.scienceFiction;
+console.log('scienceFiction ' in books);
+
 
 //object.methods
+//static
 //object.keys()
+
+const keyss = Object.keys(books);
+console.log(keyss);
 //object.values()
+
+const valuess = Object.values(books);
+console.log(valuess);
+
+//DISPLAY ALL THE BOOK CATEGORIES
+
+
+
+// Select the list container
+const categ = document.querySelector(".categories > ul");
+
+// Map over keyss array to create list items
+const categList = keyss.map((item) => {
+    return `<li>${item}</li>`;
+}).join(""); // Convert array to string
+
+// Insert into the DOM
+categ.insertAdjacentHTML("afterbegin", categList);
+
+
+
+//FOR .. IN
+
+for (key in books) {
+    console.log(`${books[key]} is a good  ${key}books`);
+};
+
